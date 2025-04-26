@@ -20,18 +20,17 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "incremental": true
   },
-   "include": [
-     "src",
-     "src/**/*",
-     "src/**/*.ts",
-     "src/**/*.tsx",
-     "src/**/*.js",
-     "src/**/*.jsx",
-     "vite.config.ts",
-     "vite-env.d.ts"
-   ],
-   "exclude": ["node_modules", "dist"]
- }
-
+  "include": [
+    "src",
+    "src/**/*",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "vite.config.ts",
+    "vite-env.d.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
+}
