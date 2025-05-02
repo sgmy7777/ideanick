@@ -26,9 +26,9 @@
     "paths": {
       "@trpc/server": ["node_modules/@trpc/server"],
       "cors": ["node_modules/cors"],
-      "express": ["node_modules/express"]
+      "express": ["node_modules/express"],
+      "@ideanick/backend/input": ["./src/input/index.ts"]
     }
   },
-  "include": ["src",
-              "src/**/*"]
+  "include": ["src", "src/**/*"]
 }

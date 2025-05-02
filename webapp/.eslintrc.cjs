@@ -36,5 +36,24 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/no-restricted-imports': [
+      'error',
+      {
+        patterns: [
+          {
+            regex: '^@ideanick/backend/(?!(input(/|$)))',
+            message: 'Импортируйте только из @ideanick/backend/input',
+          },
+        ],
+      },
+    ],
+  },
+  settings: {
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+        project: ['backend/tsconfig.json', 'webapp/tsconfig.json'],
+      },
+    },
   },
 };
