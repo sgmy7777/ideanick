@@ -3,3 +3,4 @@ node_modules
 dist/
 *.d.ts
 .env
+pnpm-lock *.yaml
