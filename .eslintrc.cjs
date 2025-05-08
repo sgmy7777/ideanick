@@ -14,6 +14,13 @@ module.exports = {
   plugins: ['@typescript-eslint', 'node'],
   rules: {
     'node/no-process-env': 'error',
+    'no-restricted-syntax': [
+      'error',
+      {
+        selector: '[object.type=MetaProperty][property.name=env]',
+        message: 'Use instead import { env } from "lib/env"',
+      },
+    ],
     // Настройки для TypeScript
     '@typescript-eslint/no-unused-vars': [
       'warn',
