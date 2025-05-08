@@ -11,8 +11,9 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'node'],
   rules: {
+    'node/no-process-env': 'error',
     // Настройки для TypeScript
     '@typescript-eslint/no-unused-vars': [
       'warn',
