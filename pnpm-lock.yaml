@@ -184,6 +184,9 @@ importers:
       js-cookie:
         specifier: 3.0.5
         version: 3.0.5
+      lodash:
+        specifier: 4.17.21
+        version: 4.17.21
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -209,6 +212,9 @@ importers:
       '@types/js-cookie':
         specifier: 3.0.3
         version: 3.0.3
+      '@types/lodash':
+        specifier: 4.14.198
+        version: 4.14.198
       '@types/react':
         specifier: ^19.0.10
         version: 19.1.2
@@ -1526,6 +1532,9 @@ packages:
 
   '@types/jsonwebtoken@9.0.2':
     resolution: {integrity: sha512-drE6uz7QBKq1fYqqoFKTDRdFCPHd5TCub75BM+D+cMx7NU9hUz7SESLfC2fSCXVFMO5Yj8sOWHuGqPgjc+fz0Q==}
+
+  '@types/lodash@4.14.198':
+    resolution: {integrity: sha512-trNJ/vtMZYMLhfN45uLq4ShQSw0/S7xCTLLVM+WM1rmFpba/VS42jVUgaO3w/NOLiWR/09lnYk0yMaA/atdIsg==}
 
   '@types/lodash@4.17.16':
     resolution: {integrity: sha512-HX7Em5NYQAXKW+1T+FiuG27NGwzJfCX3s1GjOa7ujxZa52kjJLOr4FUxT+giF6Tgxv1e+/czV/iTtBw27WTU9g==}
@@ -5483,6 +5492,8 @@ snapshots:
   '@types/jsonwebtoken@9.0.2':
     dependencies:
       '@types/node': 20.5.0
+
+  '@types/lodash@4.14.198': {}
 
   '@types/lodash@4.17.16': {}
 
