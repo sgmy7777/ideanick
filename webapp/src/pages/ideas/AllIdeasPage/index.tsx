@@ -11,8 +11,12 @@ import { Input } from '../../../components/Input';
 import { zGetIdeasTrpcInput } from '@ideanick/backend/src/router/ideas/getIdeas/input';
 import { useForm } from '../../../lib/form';
 import { useDebounce } from 'usehooks-ts';
+import { withPageWrapper } from '../../../lib/pageWrapper';
 
-export const AllIdeasPage = () => {
+export const AllIdeasPage = withPageWrapper({
+  title: 'IdeaNick',
+  isTitleExact: true,
+})(() => {
   const { formik } = useForm({
     initialValues: { search: '' },
     validationSchema: zGetIdeasTrpcInput.pick({ search: true }),
@@ -81,7 +85,7 @@ export const AllIdeasPage = () => {
       )}
     </Segment>
   );
-};
+});
 // function useDebounce(search: any, arg1: number) {
 //    throw new Error('Function not implemented.');
 // }
