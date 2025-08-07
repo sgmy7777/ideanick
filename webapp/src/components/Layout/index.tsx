@@ -1,4 +1,5 @@
 import { Link, Outlet } from 'react-router-dom';
+import { ReactComponent as Logo } from '../../assets/images/logo.svg';
 import {
   getAllIdeasRoute,
   getEditProfileRoute,
@@ -17,7 +18,7 @@ export const Layout = () => {
   return (
     <div className={css.layout}>
       <div className={css.navigation}>
-        <div className={css.logo}>IdeaNick</div>
+        <Logo className={css.logo} />
         <ul className={css.menu}>
           <li className={css.item}>
             <Link className={css.link} to={getAllIdeasRoute()}>
