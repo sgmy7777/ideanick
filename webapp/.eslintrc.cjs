@@ -23,7 +23,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'react-hooks'],
+  plugins: ['react', '@typescript-eslint', 'react-hooks', 'node'],
   settings: {
     react: {
       version: 'detect',
@@ -42,6 +42,7 @@ module.exports = {
       },
     ],
     'react-hooks/rules-of-hooks': 'error',
+    'node/no-process-env': 'off',
     'react-hooks/exhaustive-deps': 'warn',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-restricted-imports': [
