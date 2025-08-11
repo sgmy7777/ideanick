@@ -1,9 +1,9 @@
 import format from 'date-fns/format';
-import { useParams } from 'react-router-dom';
+
 import { Button, LinkButton } from '../../../components/Button';
 import { canBlockIdeas, canEditIdea } from '@ideanick/backend/src/utils/can';
 import { Segment } from '../../../components/Segment';
-import { getEditIdeaRoute, type ViewIdeaRouteParams } from '../../../lib/routes';
+import { getEditIdeaRoute, getViewIdeaRoute } from '../../../lib/routes';
 import { trpc } from '../../../lib/trpc';
 import css from './index.module.scss';
 import { withPageWrapper } from '../../../lib/pageWrapper';
@@ -69,7 +69,7 @@ const BlockIdea = ({ idea }: { idea: NonNullable<TrpcRouterOutput['getIdea']['id
 
 export const ViewIdeaPage = withPageWrapper({
   useQuery: () => {
-    const { ideaNick } = useParams() as ViewIdeaRouteParams;
+    const { ideaNick } = getViewIdeaRoute.useParams();
     return trpc.getIdea.useQuery({
       ideaNick,
     });
