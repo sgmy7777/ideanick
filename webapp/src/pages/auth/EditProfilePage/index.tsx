@@ -1,5 +1,6 @@
 import { zUpdateProfileTrpcInput } from '@ideanick/backend/src/router/auth/updateProfile/input';
 import { zUpdatePasswordTrpcInput } from '@ideanick/backend/src/router/auth/updatePassword/input';
+import { zPasswordsMustBeTheSame, zStringRequired } from '@ideanick/shared/src/zod';
 import { Alert } from '../../../components/Alert';
 import { Button } from '../../../components/Button';
 import { FormItems } from '../../../components/FormItems';
@@ -9,7 +10,6 @@ import { useForm } from '../../../lib/form';
 import { withPageWrapper } from '../../../lib/pageWrapper';
 import { trpc } from '../../../lib/trpc';
 import type { TrpcRouterOutput } from '@ideanick/backend/src/router';
-import { z } from 'zod';
 
 const General = ({ me }: { me: NonNullable<TrpcRouterOutput['getMe']['me']> }) => {
   const trpcUtils = trpc.useContext();
@@ -50,17 +50,9 @@ const Password = () => {
     },
     validationSchema: zUpdatePasswordTrpcInput
       .extend({
-        newPasswordAgain: z.string().min(1),
+        newPasswordAgain: zStringRequired,
       })
-      .superRefine((val, ctx) => {
-        if (val.newPassword !== val.newPasswordAgain) {
-          ctx.addIssue({
-            code: z.ZodIssueCode.custom,
-            message: 'Passwords must be the same',
-            path: ['newPasswordAgain'],
-          });
-        }
-      }),
+      .superRefine(zPasswordsMustBeTheSame('newPassword', 'newPasswordAgain')),
     onSubmit: async ({ newPassword, oldPassword }) => {
       await updatePassword.mutateAsync({ newPassword, oldPassword });
     },

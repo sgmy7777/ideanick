@@ -5,8 +5,9 @@
   "scripts": {
     "b": "pnpm --filter @ideanick/backend",
     "w": "pnpm --filter @ideanick/webapp",
+    "sh": "pnpm --filter @ideanick/shared",
     "dev": "pnpm -r --parallel dev",
-    "types": "concurrently 'pnpm b types' 'pnpm w types'",
+    "types": "concurrently 'pnpm b types' 'pnpm w types' 'pnpm sh types'",
     "lint": "eslint --no-error-on-unmatched-pattern --ext .ts,.tsx,.js,.jsx backend/src webapp/src",
     "lint:fix": "eslint --fix --no-error-on-unmatched-pattern --ext .ts,.tsx,.js,.jsx backend/src webapp/src",
     "lint:b": "eslint --no-error-on-unmatched-pattern --ext .ts backend/src",
