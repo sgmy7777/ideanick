@@ -34,7 +34,7 @@ module.exports = {
 
     // Общие настройки
     'no-console': ['warn', { allow: ['warn', 'error'] }], // Разрешаем console.warn и console.error
-
+    'no-new': 'off',
     // React-специфичные (для webapp)
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',

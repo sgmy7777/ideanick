@@ -32,7 +32,7 @@ module.exports = {
     'import/default': 'off',
     'import/no-named-as-default': 'off',
     'import/no-named-as-default-member': 'off',
-
+    'no-new': 'off',
     // Настраиваем порядок импортов
     'import/order': [
       'error',
