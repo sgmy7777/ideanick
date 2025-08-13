@@ -5,6 +5,7 @@ import { AllIdeasPage } from './pages/ideas/AllIdeasPage';
 import { ViewIdeaPage } from './pages/ideas/ViewIdeaPage';
 import * as routes from './lib/routes';
 import { Layout } from './components/Layout';
+import { NotAuthRouteTracker } from './components/NotAuthRouteTracker';
 import './styles/global.scss';
 import { NewIdeaPage } from './pages/ideas/NewIdeaPage';
 import { SignUpPage } from './pages/auth/SignUpPage';
@@ -21,6 +22,7 @@ export const App = () => {
       <TrpcProvider>
         <AppContextProvider>
           <BrowserRouter>
+            <NotAuthRouteTracker />
             <Routes>
               <Route path={routes.getSignOutRoute.definition} element={<SignOutPage />} />
               <Route element={<Layout />}>
