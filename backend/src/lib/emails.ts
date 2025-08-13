@@ -9,6 +9,7 @@ import _ from 'lodash';
 
 import { sendEmailThroughBrevo } from './brevo';
 import { env } from './env';
+import { logger } from './logger';
 
 const getHbrTemplates = _.memoize(async () => {
   const htmlPathsPattern = path.resolve(__dirname, '../emails/dist/**/*.html');
@@ -47,7 +48,7 @@ const sendEmail = async ({
     };
     const html = await getEmailHtml(templateName, fullTemplateVaraibles);
     const { loggableResponse } = await sendEmailThroughBrevo({ to, html, subject });
-    console.info('sendEmail', {
+    logger.info('sendEmail', {
       to,
       templateName,
       templateVariables,
@@ -55,7 +56,7 @@ const sendEmail = async ({
     });
     return { ok: true };
   } catch (error) {
-    console.error(error);
+    logger.error(error);
     return { ok: false };
   }
 };

@@ -30,6 +30,7 @@ module.exports = {
     },
   },
   rules: {
+    'no-console': ['error', { allow: ['info', 'error', 'warn'] }],
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',

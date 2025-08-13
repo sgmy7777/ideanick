@@ -33,7 +33,7 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 'off', // Полностью отключаем non-null assertion
 
     // Общие настройки
-    'no-console': ['warn', { allow: ['warn', 'error'] }], // Разрешаем console.warn и console.error
+    // 'no-console': ['warn', { allow: ['warn', 'error'] }], // Разрешаем console.warn и console.error
     'no-new': 'off',
     // React-специфичные (для webapp)
     'react/react-in-jsx-scope': 'off',

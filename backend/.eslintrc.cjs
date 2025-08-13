@@ -27,6 +27,7 @@ module.exports = {
     },
   },
   rules: {
+    'no-console': ['error'],
     // Отключаем правила, вызывающие ошибки резолвинга
     'import/namespace': 'off',
     'import/default': 'off',
