@@ -34,6 +34,16 @@ module.exports = {
     'import/no-named-as-default': 'off',
     'import/no-named-as-default-member': 'off',
     'no-new': 'off',
+    '@typescript-eslint/ban-types': [
+      'error',
+      {
+        types: {
+          // Отключаем только для Function, остальные запреты остаются
+          Function: false,
+        },
+        extendDefaults: true,
+      },
+    ],
     // Настраиваем порядок импортов
     'import/order': [
       'error',

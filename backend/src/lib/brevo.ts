@@ -8,7 +8,7 @@ const makeRequestToBrevo = async ({
   data,
 }: {
   path: string;
-  data: Record<string, any>;
+  data: Record<string, unknown>;
 }): Promise<{
   originalResponse?: AxiosResponse;
   loggableResponse: Pick<AxiosResponse, 'status' | 'statusText' | 'data'>;

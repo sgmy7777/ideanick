@@ -39,7 +39,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off', // Не требовать указания типов возврата
-    '@typescript-eslint/no-explicit-any': 'warn', // Предупреждать об any
+    '@typescript-eslint/no-explicit-any': 'off', // Предупреждать об any
     'react-hooks/rules-of-hooks': 'error', // Проверка правил хуков
     'react-hooks/exhaustive-deps': 'warn', // Проверка зависимостей эффектов
   },

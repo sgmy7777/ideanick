@@ -39,7 +39,7 @@ const sendEmail = async ({
   to: string;
   subject: string;
   templateName: string;
-  templateVariables?: Record<string, any>;
+  templateVariables?: Record<string, unknown>;
 }) => {
   try {
     const fullTemplateVaraibles = {
