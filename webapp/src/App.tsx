@@ -4,6 +4,7 @@ import { TrpcProvider } from './lib/trpc';
 import { AllIdeasPage } from './pages/ideas/AllIdeasPage';
 import { ViewIdeaPage } from './pages/ideas/ViewIdeaPage';
 import * as routes from './lib/routes';
+import { SentryUser } from './lib/sentry';
 import { Layout } from './components/Layout';
 import { NotAuthRouteTracker } from './components/NotAuthRouteTracker';
 import './styles/global.scss';
@@ -22,6 +23,7 @@ export const App = () => {
       <TrpcProvider>
         <AppContextProvider>
           <BrowserRouter>
+            <SentryUser />
             <NotAuthRouteTracker />
             <Routes>
               <Route path={routes.getSignOutRoute.definition} element={<SignOutPage />} />
