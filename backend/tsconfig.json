@@ -26,6 +26,7 @@
     "target": "ES2021",
     "paths": {
       "@ideanick/webapp/*": ["../webapp/*"],
+      "@ideanick/shared/*": ["../shared/*"],
       "@trpc/server": ["node_modules/@trpc/server"],
       "@ideanick/backend/input": ["./src/input/index.ts"]
     }
