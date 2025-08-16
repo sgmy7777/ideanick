@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  ignorePatterns: ['node_modules/', 'dist/', '*.d.ts', 'vite.config.ts'],
+  ignorePatterns: ['node_modules/', 'dist/', '*.d.ts', 'vite.config.ts', 'jest.config.js'],
   env: {
     browser: true,
     es2021: true,
@@ -11,6 +11,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:import/recommended',
     'prettier',
   ],
   parser: '@typescript-eslint/parser',
@@ -24,11 +25,6 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react', '@typescript-eslint', 'react-hooks', 'node'],
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
   rules: {
     'no-console': ['error', { allow: ['info', 'error', 'warn'] }],
     'react/react-in-jsx-scope': 'off',
@@ -59,6 +55,9 @@ module.exports = {
     ],
   },
   settings: {
+    react: {
+      version: 'detect',
+    },
     'import/resolver': {
       typescript: {
         alwaysTryTypes: true,
