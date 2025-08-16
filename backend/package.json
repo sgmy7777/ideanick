@@ -9,6 +9,7 @@
     "copy-emails": "copyfiles ./src/emails/dist/*.html ./dist/backend",
     "build-ts": "rimraf ./dist && tsc --build ./tsconfig.json",
     "build": "pnpm build-ts && pnpm build-emails && pnpm copy-emails",
+    "sentry": "node -r dotenv/config -e 'const { execSync } = require(\"child_process\"); const v = process.env.SOURCE_VERSION; const token = process.env.SENTRY_AUTH_TOKEN; if (!v || !token) { console.error(\"SOURCE_VERSION or SENTRY_AUTH_TOKEN is missing\"); process.exit(1); } const org=\"petridea\"; const project=\"backend\"; execSync(`pnpm dlx @sentry/cli releases new ${v} --org ${org} --project ${project} --auth-token ${token}`, { stdio:\"inherit\" }); execSync(`pnpm dlx @sentry/cli releases files ${v} upload-sourcemaps ./dist --rewrite --url-prefix '~/dist' --org ${org} --project ${project} --auth-token ${token}`, { stdio:\"inherit\" }); execSync(`pnpm dlx @sentry/cli releases finalize ${v} --org ${org} --project ${project} --auth-token ${token}`, { stdio:\"inherit\" });'",
     "start": "node ./dist/backend/src/index.js",
     "pmd": "prisma migrate dev",
     "pgc": "prisma generate",
@@ -22,6 +23,7 @@
     "schema": "./src/prisma/schema.prisma"
   },
   "devDependencies": {
+    "@sentry/cli": "2.21.1",
     "@types/cors": "2.8.13",
     "@types/cron": "2.4.0",
     "@types/debug": "4.1.8",
@@ -34,6 +36,7 @@
     "@types/triple-beam": "1.3.3",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
+    "dotenv-cli": "7.3.0",
     "eslint": "8.47.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-import-resolver-typescript": "3.6.0",
@@ -45,6 +48,7 @@
     "@ideanick/shared": "workspace:*",
     "@ideanick/webapp": "workspace:*",
     "@prisma/client": "5.2.0",
+    "@sentry/integrations": "7.70.0",
     "@sentry/node": "7.70.0",
     "@trpc/server": "10.37.1",
     "axios": "1.5.0",

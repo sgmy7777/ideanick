@@ -87,6 +87,9 @@ importers:
       '@prisma/client':
         specifier: 5.2.0
         version: 5.2.0(prisma@5.2.0)
+      '@sentry/integrations':
+        specifier: 7.70.0
+        version: 7.70.0
       '@sentry/node':
         specifier: 7.70.0
         version: 7.70.0
@@ -160,6 +163,9 @@ importers:
         specifier: 3.22.2
         version: 3.22.2
     devDependencies:
+      '@sentry/cli':
+        specifier: 2.21.1
+        version: 2.21.1
       '@types/cors':
         specifier: 2.8.13
         version: 2.8.13
@@ -196,6 +202,9 @@ importers:
       '@typescript-eslint/parser':
         specifier: 5.62.0
         version: 5.62.0(eslint@8.47.0)(typescript@5.1.6)
+      dotenv-cli:
+        specifier: 7.3.0
+        version: 7.3.0
       eslint:
         specifier: 8.47.0
         version: 8.47.0
@@ -1641,6 +1650,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@sentry/cli@2.21.1':
+    resolution: {integrity: sha512-iJGL818zHzVb129CNWLoZriymq2nrnhk1XqN4Fh0AMxYJcOICmXYKR8RSkLhhE1U1J1D77UzA+FyBhWHOFA82A==}
+    engines: {node: '>= 10'}
+    hasBin: true
+
   '@sentry/cli@2.52.0':
     resolution: {integrity: sha512-PXyo7Yv7+rVMSBGZfI/eFEzzhiKedTs25sDCjz4a3goAZ/F5R5tn3MKq30pnze5wNnoQmLujAa0uUjfNcWP+uQ==}
     engines: {node: '>= 10'}
@@ -1656,6 +1670,10 @@ packages:
 
   '@sentry/integrations@7.120.4':
     resolution: {integrity: sha512-kkBTLk053XlhDCg7OkBQTIMF4puqFibeRO3E3YiVc4PGLnocXMaVpOSCkMqAc1k1kZ09UgGi8DxfQhnFEjUkpA==}
+    engines: {node: '>=8'}
+
+  '@sentry/integrations@7.70.0':
+    resolution: {integrity: sha512-ffIEuiElROzl4IpYX0O7vtPaadXVycPtyjq86YTHjd2TUFcYuQTPBm5UjEVE0/sSNNCdfWYxNThU/fVyq93l1g==}
     engines: {node: '>=8'}
 
   '@sentry/node@7.120.4':
@@ -2583,6 +2601,14 @@ packages:
 
   domutils@3.2.2:
     resolution: {integrity: sha512-6kZKyUajlDuqlHKVX1w7gyslj9MPIXzIFiz/rGu35uC1wMi+kMhQwGhl4lt9unC9Vb9INnY9Z3/ZA3+FhASLaw==}
+
+  dotenv-cli@7.3.0:
+    resolution: {integrity: sha512-314CA4TyK34YEJ6ntBf80eUY+t1XaFLyem1k9P0sX1gn30qThZ5qZr/ZwE318gEnzyYP9yj9HJk6SqwE0upkfw==}
+    hasBin: true
+
+  dotenv-expand@10.0.0:
+    resolution: {integrity: sha512-GopVGCpVS1UKH75VKHGuQFqS1Gusej0z4FyQkPdwjil2gNIv+LNsqBlboOzpJFZKVT95GkCyWJbBSdFEFUWI2A==}
+    engines: {node: '>=12'}
 
   dotenv@16.3.1:
     resolution: {integrity: sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==}
@@ -5982,7 +6008,7 @@ snapshots:
       '@babel/parser': 7.27.0
       '@babel/template': 7.27.0
       '@babel/types': 7.27.0
-      debug: 4.4.0
+      debug: 4.3.4
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -6364,7 +6390,7 @@ snapshots:
     dependencies:
       '@sentry/cli': 2.52.0
       '@sentry/node': 7.120.4
-      '@sentry/utils': 7.70.0
+      '@sentry/utils': 7.120.4
       dotenv: 16.3.1
       find-up: 5.0.0
       glob: 9.3.2
@@ -6397,6 +6423,17 @@ snapshots:
 
   '@sentry/cli-win32-x64@2.52.0':
     optional: true
+
+  '@sentry/cli@2.21.1':
+    dependencies:
+      https-proxy-agent: 5.0.1
+      node-fetch: 2.7.0
+      progress: 2.0.3
+      proxy-from-env: 1.1.0
+      which: 2.0.2
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
 
   '@sentry/cli@2.52.0':
     dependencies:
@@ -6435,6 +6472,13 @@ snapshots:
       '@sentry/types': 7.120.4
       '@sentry/utils': 7.120.4
       localforage: 1.10.0
+
+  '@sentry/integrations@7.70.0':
+    dependencies:
+      '@sentry/types': 7.70.0
+      '@sentry/utils': 7.70.0
+      localforage: 1.10.0
+      tslib: 2.8.1
 
   '@sentry/node@7.120.4':
     dependencies:
@@ -7506,6 +7550,15 @@ snapshots:
       dom-serializer: 2.0.0
       domelementtype: 2.3.0
       domhandler: 5.0.3
+
+  dotenv-cli@7.3.0:
+    dependencies:
+      cross-spawn: 7.0.6
+      dotenv: 16.3.1
+      dotenv-expand: 10.0.0
+      minimist: 1.2.8
+
+  dotenv-expand@10.0.0: {}
 
   dotenv@16.3.1: {}
 
